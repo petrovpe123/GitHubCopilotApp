@@ -2,17 +2,58 @@
 import Base from '../layouts/Base.astro';
 import Bookmarks from '../components/Bookmarks.astro';
 ---
-<Base title="Mona's Bookmark Manager App">
-  <header>
-    <h1>🔖 Mona's Bookmark Manager App</h1>
-    <p class="tagline">A little home for your favorite links. Save a URL, get a short <code>mona-</code> label, and pick up where you left off.</p>
+<Base title="Mona | A home for your favorite links">
+  <a class="skip-link" href="#bookmarks">Skip to bookmarks</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Mona home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10v16l-5-4-5 4V4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /></svg>
+      </span>
+      mona<span class="brand-dot">.</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#how-it-works">How it works</a>
+      <a class="nav-button" href="#bookmarks">My bookmarks <span aria-hidden="true">&nearr;</span></a>
+    </nav>
   </header>
 
   <main>
-    <Bookmarks />
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span aria-hidden="true">&#10022;</span> GOOD LINKS DESERVE A HOME</p>
+        <h1 id="hero-title">Less searching.<br />More <span>finding.</span></h1>
+        <p class="hero-description">That useful article. Your next big idea. The little corner of the internet you love. Keep them all somewhere you can find them.</p>
+        <a class="primary-link" href="#bookmarks">Save your first link <span aria-hidden="true">&rarr;</span></a>
+        <p class="hero-note">No account. No clutter. Just your bookmarks.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-topline"><span>YOUR LITTLE CORNER OF THE INTERNET</span><span>&#10022;</span></div>
+        <div class="preview-card preview-back"><span class="preview-icon">&#123; &#125;</span><div><strong>A spark for your next project</strong><span>Inspiration, saved for later</span></div><span class="preview-arrow">&nearr;</span></div>
+        <div class="preview-card preview-middle"><span class="preview-icon">&#9776;</span><div><strong>Something worth reading</strong><span>The good stuff, all in one place</span></div><span class="preview-arrow">&nearr;</span></div>
+        <div class="preview-card preview-front"><span class="preview-icon">&#9734;</span><div><strong>Your new favorite find</strong><span class="preview-slug">mona-aB3k</span></div><span class="preview-arrow">&nearr;</span></div>
+        <div class="art-caption"><span class="caption-line"></span>A small collection. Endless possibilities.</div>
+      </div>
+    </section>
+
+    <section id="bookmarks" class="bookmark-section" aria-labelledby="bookmarks-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">SAVE IT FOR A GOOD MOMENT</p><h2 id="bookmarks-title">Your link collection</h2></div>
+        <span class="local-badge"><span aria-hidden="true">&#9679;</span> Stored on this device</span>
+      </div>
+      <div class="bookmark-panel"><Bookmarks /></div>
+    </section>
+
+    <section id="how-it-works" class="how-section" aria-labelledby="how-title">
+      <div class="how-heading"><p class="eyebrow">A LITTLE SIMPLER</p><h2 id="how-title">Keep the link.<br />Skip the fuss.</h2></div>
+      <div class="feature"><span class="step-number">01 /</span><h3>Find something good</h3><p>An article, a tool, a recipe. If it has a web address, it belongs here.</p></div>
+      <div class="feature"><span class="step-number">02 /</span><h3>Make it a keeper</h3><p>Paste your link and get a unique <code>mona-</code> label. Small, simple, yours.</p></div>
+      <div class="feature"><span class="step-number">03 /</span><h3>Come back to it</h3><p>Your collection stays in this browser, ready whenever inspiration calls.</p></div>
+    </section>
   </main>
 
-  <footer>
-    Your bookmarks stay on this device, saved in your browser.
+  <footer class="site-footer">
+    <span class="footer-brand">mona.</span>
+    <span>A little home for your favorite links.</span>
+    <span>Made for a less scattered internet.</span>
   </footer>
 </Base>

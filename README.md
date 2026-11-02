@@ -21,7 +21,9 @@ Bookmarks stay in this browser under the `mona-bookmarks` localStorage key.
 The browser-only Astro script validates saved records, skips malformed or legacy
 entries, and reports corrupted or inaccessible storage. Failed saves keep the
 entered URL so you can retry. JavaScript is required; the static build does not
-read browser storage. The UI uses the existing self-hosted Monaspace fonts.
+read browser storage. The responsive homepage includes a link collection and a
+short how-it-works guide, with light and dark themes and system sans-serif
+typography. Use `?scoutTheme=light` or `?scoutTheme=dark` to override the system theme.
 
 Run `npm test` for the browser-free helper tests and `npm run build` for the
 production static build.
